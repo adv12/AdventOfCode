@@ -76,10 +76,6 @@ class Instruction
     public Instruction(string spec)
     {
         Operation = spec.Substring(0, 3);
-        Argument = int.Parse(spec.Substring(5));
-        if (spec[4] == '-')
-        {
-            Argument = -Argument;
-        }
+        Argument = int.Parse(spec.Substring(4));
     }
 }
