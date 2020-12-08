@@ -21,11 +21,11 @@ long RunProgram(Instruction[] program, out bool infiniteLoop)
             case 'n': // nop
                 i++;
                 break;
-            case 'a': // jmp
+            case 'a': // acc
                 accumulator += instruction.Argument;
                 i++;
                 break;
-            case 'j':
+            case 'j': // jmp
                 i += instruction.Argument;
                 break;
         }
