@@ -52,7 +52,7 @@ bool CanSeeOccupiedSeat(char[][] seats, int row, int col, int dr, int dc)
     return false;
 }
 
-char[][] IterateUntilNoChange(char[][] seats, bool countVisible, int adjacentFullThreshhold)
+char[][] IterateUntilNoChange(char[][] seats, bool countVisible, int occupiedThreshold)
 {
     char[][] newSeats = null;
     bool changed = false;
@@ -74,7 +74,7 @@ char[][] IterateUntilNoChange(char[][] seats, bool countVisible, int adjacentFul
                     changed = true;
                     newSeat = '#';
                 }
-                else if (seat == '#' && count >= adjacentFullThreshhold)
+                else if (seat == '#' && count >= occupiedThreshold)
                 {
                     changed = true;
                     newSeat = 'L';
