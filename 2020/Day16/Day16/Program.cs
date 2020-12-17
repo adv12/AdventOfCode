@@ -139,19 +139,9 @@ class Rule
         Array.Fill(Candidates, true);
     }
 
-    public bool IsInRange1(int val)
-    {
-        return val >= Min1 && val <= Max1;
-    }
-
-    public bool IsInRange2(int val)
-    {
-        return val >= Min2 && val <= Max2;
-    }
-
     public bool IsInRange(int val)
     {
-        return IsInRange1(val) || IsInRange2(val);
+        return (val >= Min1 && val <= Max1) || (val >= Min2 && val <= Max2);
     }
 
     public void Test(int val, int i)
